@@ -9,27 +9,31 @@
 	Width="800"
 	Height="450"
 	mc:Ignorable="d">
+	
 	<Grid>
 		<Grid.RowDefinitions>
-			<RowDefinition Height="24"/>
-			<RowDefinition Height="*"/>
+			<RowDefinition Height="24" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
 		</Grid.RowDefinitions>
 
 		<Grid Grid.Row="0">
 			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="*"/>
-				<ColumnDefinition Width="100"/>
-				<ColumnDefinition Width="10"/>
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="100" />
+				<ColumnDefinition Width="10" />
 			</Grid.ColumnDefinitions>
-
 			<DockPanel Grid.Column="1" LastChildFill="False">
-				<Button Width="100" Height="24" Click="Button_Click">
+				<Button
+					Width="100"
+					Height="24"
+					Click="Button_Click">
 					<Path Stroke="Black" StrokeThickness="2">
 						<Path.Data>
 							<PathGeometry>
 								<PathFigure StartPoint="0,0">
-									<LineSegment Point="10,10"/>
-									<LineSegment Point="20,0"/>
+									<LineSegment Point="10,10" />
+									<LineSegment Point="20,0" />
 								</PathFigure>
 							</PathGeometry>
 						</Path.Data>
@@ -43,10 +47,28 @@
 					</Button.ContextMenu>
 				</Button>
 			</DockPanel>
-
 		</Grid>
 
-		
+		<ListView x:Name="myListView" Grid.Row="2">
+			<ListView.View>
+				<GridView>
+					<GridViewColumn
+						Width="100"
+						DisplayMemberBinding="{Binding Path=Property1}"
+						Header="Column A" />
+					<GridViewColumn
+						Width="200"
+						DisplayMemberBinding="{Binding Path=Property2}"						
+						Header="Column B" />
+					<GridViewColumn
+						Width="300"
+						DisplayMemberBinding="{Binding Path=Property3}"
+						Header="Column C" />
+				</GridView>
+			</ListView.View>
+		</ListView>
+
+
 	</Grid>
 
 </Window>
