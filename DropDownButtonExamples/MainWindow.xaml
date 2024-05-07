@@ -49,7 +49,7 @@
 			</DockPanel>
 		</Grid>
 
-		<ListView x:Name="myListView" Grid.Row="2">
+		<ListView x:Name="myListView" Grid.Row="2" AllowDrop="True">
 			<ListView.View>
 				<GridView>
 					<GridViewColumn
